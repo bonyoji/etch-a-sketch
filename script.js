@@ -1,7 +1,5 @@
 const gridContainer = document.querySelector('.container');
 
-
-
 function createGridColumn(num) {
     for (let i = 0; i < num; i++) {
         createGridRow(num);
@@ -14,13 +12,14 @@ function createGridRow(num) {
         const row = document.createElement('div');
         row.classList.add('row-' + rowID);
         grid.id = 'column-' + columnID;
+        row.onmouseover = () => row.style.background = 'black';
         grid.appendChild(row);
         rowID++;
-    }
+    };
     gridContainer.appendChild(grid);
     columnID++;
 }
 
 let columnID = 0;
 let rowID = 0;
-createGridColumn(16);
+createGridColumn(8);

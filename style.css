@@ -1,14 +1,18 @@
 div {
-    display: flex;
+    display:flex;
     border: solid;
     background-color: aliceblue;
     flex: auto;
 }
 
+.row {
+    background-color: beige;
+}
+
 .container {
     border: solid;
-    height: 75vh;
-    width: 50vh;
+    height: 85vh;
+    width: 760px;
     background-color: blanchedalmond;
     display: flex;
     flex-wrap: wrap;
