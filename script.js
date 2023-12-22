@@ -11,6 +11,7 @@ function createGridRow(num) {
     for (let i = 0; i < num; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
+        row.onmouseover = () => row.style.background = 'black';
         grid.id = 'column-' + columnID;
         grid.appendChild(row);
     };
@@ -19,13 +20,25 @@ function createGridRow(num) {
 }
 
 let columnID = 0;
-
 createGridColumn(8);
 
-const gridItem = document.querySelectorAll('.row');
+const btn = document.createElement('button');
+btn.classList.add('btn-Grid');
+btn.textContent = 'Grid Size';
 
-gridItem.forEach(item => {
-    item.addEventListener('mouseover', () => {
-        item.classList.add('row-On');
-    })
+document.body.insertBefore(btn, gridContainer);
+
+function createGrid(num) {
+    return createGridColumn(num);
+}
+
+btn.addEventListener('click', () => {
+    let gridSize = +prompt('Enter a number for your Grid: ');
+    if (isNaN(gridSize) || gridSize > 100 || gridSize <= 0) {
+        while (isNaN(gridSize) || gridSize > 100 || gridSize <= 0) {
+        gridSize = +prompt('Please enter a number between 1 and 100');
+        }
+    }
+    gridContainer.innerHTML = '';
+    createGrid(gridSize);
 })
