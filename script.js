@@ -12,6 +12,7 @@ function createGridRow(num) {
         const row = document.createElement('div');
         row.classList.add('row');
         row.onmouseover = () => row.style.background = 'black';
+        // row.onmouseover = () => row.style.background = randomColor();
         grid.id = 'column-' + columnID;
         grid.appendChild(row);
     };
@@ -42,3 +43,12 @@ btn.addEventListener('click', () => {
     gridContainer.innerHTML = '';
     createGrid(gridSize);
 })
+
+//Extra credit 
+
+function randomColor() {
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
+}
