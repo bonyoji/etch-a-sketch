@@ -20,3 +20,7 @@ div {
     padding: 0;
     flex-direction: column;
 }
+
+.row-On {
+    background-color: black;
+}
